@@ -8,6 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class sport_type extends Model
 {
     use HasFactory;
-    protected $guarded = []; 
 
+    protected $guarded = [];
+
+    // Relationships
+    public function fields()
+    {
+        return $this->hasMany(Field::class);
+    }
 }
