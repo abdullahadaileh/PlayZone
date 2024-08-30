@@ -21,6 +21,29 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 
+Route::get('/', function () {
+    return view('landing_page.landing');
+})->name('Home');
+
+Route::get('/contact', function () {
+    return view('landing_page.pages.contact');
+})->name('contact');
+
+Route::get('/about', function () {
+    return view('landing_page.pages.about');
+})->name('about');
+Route::get('/services', function () {
+    return view('landing_page.pages.services');
+})->name('services');
+Route::get('/blogs', function () {
+    return view('landing_page.pages.blogs');
+})->name('blogs');
+
+
+
+
+// ********* controllers ********* //
+
 // Routes for UserController
 Route::resource('users', UserController::class);
 
