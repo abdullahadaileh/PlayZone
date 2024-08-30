@@ -23,7 +23,7 @@
                         <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
                             <div class="service-item">
                                 <div class="service-img">
-                                    <img src="{{asset('landing/img/0yy2_hop1_150709.jpg')}}" class="img-fluid rounded-top w-100" alt="Image">
+                                    <img src="{{asset('landing/img/vecteezy_basketball-ball-and-net-on-black-background_12647003.jpg')}}" class="img-fluid rounded-top w-100" alt="Image">
                                 </div>
                                 <div class="rounded-bottom p-4">
                                     <a href="#" class="h4 d-inline-block mb-4">Financial Advisory</a>

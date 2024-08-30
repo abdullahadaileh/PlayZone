@@ -75,3 +75,10 @@ Route::get('/services', function () {
 Route::get('/blogs', function () {
     return view('landing_page.pages.blogs');
 })->name('blogs');
+
+
+
+///Dashboard 
+Route::get('/dash', function () {
+    return view('Dashboard.main');
+});
