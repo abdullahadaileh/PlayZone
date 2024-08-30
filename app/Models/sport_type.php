@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class sport_type extends Model
 {
     use HasFactory;
+    protected $guarded = []; 
+
 }

@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Field_history extends Model
 {
     use HasFactory;
+    protected $guarded = []; 
+
 }
