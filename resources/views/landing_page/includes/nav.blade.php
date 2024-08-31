@@ -10,7 +10,8 @@
                     <div class="navbar-nav ms-auto py-0">
                         <a href="{{ route('Home') }}" class="nav-item nav-link active">Home</a>
                         <a href="{{ route('about') }}" class="nav-item nav-link">About</a>
-                        <a href="{{ route('services') }}" class="nav-item nav-link">Services</a>
+                        <!-- change zaina -->
+                        <a href="{{ route('services.index') }}" class="nav-item nav-link">Services</a> 
                         <a href="{{ route('blogs') }}" class="nav-item nav-link">Blogs</a>
                         </div>
 <a href="{{ route('contact') }}" class="nav-item nav-link">Contact Us</a>

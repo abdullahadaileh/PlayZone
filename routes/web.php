@@ -6,6 +6,7 @@ use App\Http\Controllers\FieldController;
 use App\Http\Controllers\FieldHistoryController;
 use App\Http\Controllers\FieldImagesController;
 use App\Http\Controllers\FieldTypeController;
+use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SportTypeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
@@ -69,9 +70,7 @@ Route::get('/contact', function () {
 Route::get('/about', function () {
     return view('landing_page.pages.about');
 })->name('about');
-Route::get('/services', function () {
-    return view('landing_page.pages.services');
-})->name('services');
+Route::resource('services', ServiceController::class);
 Route::get('/blogs', function () {
     return view('landing_page.pages.blogs');
 })->name('blogs');

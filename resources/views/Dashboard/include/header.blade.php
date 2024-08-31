@@ -155,6 +155,23 @@
                             <a href="form.html">
                                 <i class="far fa-check-square"></i>Reservations Details</a>
                         </li>
+                    <!-- zaina change -->
+                      <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fa-regular fa-paste"></i>Zones</a>
+                            <ul class="list-unstyled navbar__sub-list js-sub-list">
+                               <li>
+                        <a href="{{route('fields.index')}}">
+                           <i class="fa-regular fa-futbol"></i> All Zones</a>
+                        </li>
+                                <li>
+                                     <a href="{{route('fields.create')}}"><i class="fa-solid fa-plus"></i>New Zone</a>
+                                </li>
+                               
+                            </ul>
+                        </li>
+                   
+                        <!-- zaina change -->
                         <li>
                             <a href="calendar.html">
                                 <i class="fas fa-calendar-alt"></i>Calendar</a>
