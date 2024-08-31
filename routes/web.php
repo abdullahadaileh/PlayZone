@@ -11,6 +11,7 @@ use App\Http\Controllers\SportTypeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -80,4 +81,12 @@ Route::get('/blogs', function () {
 ///Dashboard 
 Route::get('/dash', function () {
     return view('Dashboard.main');
+});
+
+
+Route::get('/dash', [DashboardController::class, 'index'])->middleware(['auth','admin']);
+Route::get('/dash', [DashboardController::class, 'index'])->name('dashboard.main');
+Route::get('/dashboard/create-user', [UserController::class, 'create'])->name('Dashboard.create-user');
+Route::middleware(['auth'])->group(function () {
+    Route::delete('users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
 });
