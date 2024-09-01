@@ -21,7 +21,7 @@
                                                 <div class="overview__inner">
                                                     <div class="overview-box clearfix">
                                                         <div class="icon">
-                                                            <i class="zmdi zmdi-account-o"></i>
+                                                            <i class="fa-solid fa-user" style="color: #ffffff;"></i>
                                                         </div>
                                                         <div class="text">
                                                             <h2>10368</h2>
@@ -39,8 +39,7 @@
                                                 <div class="overview__inner">
                                                     <div class="overview-box clearfix">
                                                         <div class="icon">
-                                                            <i class="fa-light fa-user-tie"></i>
-                                                            {{-- <i class="fa-light fa-user-tie"></i> --}}
+                                                            <i class="fa-solid fa-user-tie" style="color: #ffffff;"></i>
                                                         </div>
                                                         <div class="text">
                                                             <h2>388,688</h2>
@@ -58,8 +57,7 @@
                                                 <div class="overview__inner">
                                                     <div class="overview-box clearfix">
                                                         <div class="icon">
-                                                            {{-- <i class="zmdi zmdi-calendar-note"></i> --}}
-                                                            <i class="fa-regular fa-money-bill"></i>
+                                                            <i class="fa-solid fa-money-bill" style="color: #ffffff;"></i>
                                                         </div>
                                                         <div class="text">
                                                             <h2>1,086</h2>
@@ -77,10 +75,10 @@
                                                 <div class="overview__inner">
                                                     <div class="overview-box clearfix">
                                                         <div class="icon">
-                                                            <i class="zmdi zmdi-calendar-note"></i>
+                                                            <i class="fa-solid fa-handshake-simple" style="color: #ffffff;"></i>
                                                         </div>
                                                         <div class="text">
-                                                            <h2>1,060/2,000</h2>
+                                                            <h2>1,060</h2>
                                                             <span>Reservations</span>
                                                         </div>
                                                     </div>

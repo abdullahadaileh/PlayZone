@@ -12,15 +12,17 @@ class SportTypeController extends Controller
      */
     public function index()
     {
-        //
+        $sports_type = sport_type::all();
+        return view('Dashboard.Sports.index')->with('sports_type', $sports_type);
     }
-
+    
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        //
+        $sports_type = sport_type::all();
+        return view('Dashboard.Sports.create')->with('sports_type', $sports_type);
     }
 
     /**
@@ -28,7 +30,12 @@ class SportTypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        sport_type::create([
+            'sport_type' => $request->input('sport_type'),
+            'sport_image' => $request->input('sport_image'),
+        ]);
+
+        return redirect()->route('sport-types.index')->with('success', 'Product created successfully.');
     }
 
     /**
@@ -42,17 +49,23 @@ class SportTypeController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(sport_type $sport_type)
+    public function edit($id)
     {
-        //
+        $sport_type= sport_type::findorFail($id);
+        return view('Dashboard.Sports.edit')->with('sport_type', $sport_type);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, sport_type $sport_type)
+    public function update(Request $request, sport_type $sport_type, $id)
     {
-        //
+        $sport_type = sport_type::findorFail($id);
+        $sport_type->update([
+            "sport_type" => $request->sport_type,
+            "sport_image" => $request->sport_image,
+        ]);
+        return redirect()->route('sport_type.index'); 
     }
 
     /**
