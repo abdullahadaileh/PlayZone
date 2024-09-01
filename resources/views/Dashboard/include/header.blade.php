@@ -119,7 +119,7 @@
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
                 <a href="#">
-                    <img src={{asset("Dashboard/images/iccon/logo.png")}} alt="PlayZone logo" />
+                    <img src="{{ asset('landing/img/image.png') }}" alt="PlayZone logo" />
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
@@ -128,20 +128,12 @@
                         <li class="has-sub">
                             <a class="js-arrow" href="{{url('dash')}}">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
-                        </li>
-                        <li>
-                            <a href="chart.html">
-                                <i class="fas fa-chart-bar"></i>My Fields</a>
-                        </li>
-                        {{-- RGD --}}
-                        {{-- Add sports --}}
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fa-solid fa-futbol" style="color: #00d084;"></i>Sports</a>
-                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                            <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="{{route('sport-types.create')}}"><i class="fa-regular fa-plus" style="color: #00d084;"></i>Add sport</a>
+                                    <a href="{{ url('/dash') }}">Dashboard 1</a>
                                 </li>
+                             
+                              
                                 <li>
                                     <a href="{{route('sport-types.index')}}"><i class="fa-solid fa-table" style="color: #00d084;"></i>Sports Details</a>
                                 </li>
@@ -152,10 +144,35 @@
                             <a href="table.html">
                                 <i class="fa-solid fa-users" style="color: #00d084;"></i>Subscribers/Users</a>
                         </li>
+                         {{-- Add sports --}}
+                         <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fa-solid fa-futbol" style="color: #00d084;"></i>Sports</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="{{route('sport-types.create')}}"><i class="fa-regular fa-plus" style="color: #00d084;"></i>Add sport</a>
+                                </li>
                         <li>
                             <a href="form.html">
                                 <i class="far fa-check-square" style="color: #00d084;"></i>Reservations Details</a>
                         </li>
+                    <!-- zaina change -->
+                      <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fa-regular fa-paste"></i>Zones</a>
+                            <ul class="list-unstyled navbar__sub-list js-sub-list">
+                               <li>
+                        <a href="{{route('fields.index')}}">
+                           <i class="fa-regular fa-futbol"></i> All Zones</a>
+                        </li>
+                                <li>
+                                     <a href="{{route('fields.create')}}"><i class="fa-solid fa-plus"></i>New Zone</a>
+                                </li>
+                               
+                            </ul>
+                        </li>
+                   
+                        <!-- zaina change -->
                         <li>
                             <a href="{{url('calendar')}}">
                                 <i class="fas fa-calendar-alt"  style="color: #00d084;"></i>Calendar</a>
@@ -356,7 +373,10 @@
                                             <img src={{asset("Dashboard/images/icon/avatar-01.jpg")}} alt="John Doe" />
                                         </div>
                                         <div class="content">
-                                            <a class="js-acc-btn" href="#">john doe</a>
+                                            <a  role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                                {{ Auth::user()->name }}   
+                                                {{-- تعديل --}}
+                                            </a>
                                         </div>
                                         <div class="account-dropdown js-dropdown">
                                             <div class="info clearfix">
@@ -367,19 +387,20 @@
                                                 </div>
                                                 <div class="content">
                                                     <h5 class="name">
-                                                        <a href="#">john doe</a>
-                                                    </h5>
-                                                    <span class="email">johndoe@example.com</span>
+                                                        <a  role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                                            {{ Auth::user()->name }}
+                                                        </a>                                                    </h5>
+                                                        <span class="email">{{ Auth::user()->email }}</span>
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__body">
                                                 <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-account"></i>Account</a>
+                                                    <a href="{{ url('/') }}">
+                                                        <i class="zmdi zmdi-home"></i>Home</a>
                                                 </div>
                                                 <div class="account-dropdown__item">
                                                     <a href="#">
-                                                        <i class="zmdi zmdi-settings"></i>Setting</a>
+                                                        <i class="zmdi zmdi-account"></i>Account</a>
                                                 </div>
                                                 <div class="account-dropdown__item">
                                                     <a href="#">
@@ -387,9 +408,12 @@
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__footer">
-                                                <a href="#">
+                                                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                                     <i class="zmdi zmdi-power"></i>Logout</a>
-                                            </div>
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                    @csrf
+                                                </form>
+                                                        </div>
                                         </div>
                                     </div>
                                 </div>

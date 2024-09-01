@@ -6,10 +6,12 @@ use App\Http\Controllers\FieldController;
 use App\Http\Controllers\FieldHistoryController;
 use App\Http\Controllers\FieldImagesController;
 use App\Http\Controllers\FieldTypeController;
+use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SportTypeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -69,9 +71,7 @@ Route::get('/contact', function () {
 Route::get('/about', function () {
     return view('landing_page.pages.about');
 })->name('about');
-Route::get('/services', function () {
-    return view('landing_page.pages.services');
-})->name('services');
+Route::resource('services', ServiceController::class);
 Route::get('/blogs', function () {
     return view('landing_page.pages.blogs');
 })->name('blogs');
@@ -81,4 +81,12 @@ Route::get('/blogs', function () {
 ///Dashboard 
 Route::get('/dash', function () {
     return view('Dashboard.main');
+});
+
+
+Route::get('/dash', [DashboardController::class, 'index'])->middleware(['auth','admin']);
+Route::get('/dash', [DashboardController::class, 'index'])->name('dashboard.main');
+Route::get('/dashboard/create-user', [UserController::class, 'create'])->name('Dashboard.create-user');
+Route::middleware(['auth'])->group(function () {
+    Route::delete('users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
 });
