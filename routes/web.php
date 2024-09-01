@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Book_Page;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\FieldController;
@@ -75,6 +76,8 @@ Route::resource('services', ServiceController::class);
 Route::get('/blogs', function () {
     return view('landing_page.pages.blogs');
 })->name('blogs');
+// zaina change
+Route::get('/book', [Book_Page::class,'index'])->name('book');
 
 Route::get('/show-available-times', [BookingController::class, 'showAvailableTimes'])->name('showAvailableTimes');
 
