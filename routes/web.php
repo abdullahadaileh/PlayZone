@@ -90,7 +90,13 @@ Route::get('/dash', function () {
 
 Route::get('/dash', [DashboardController::class, 'index'])->middleware(['auth','admin']);
 Route::get('/dash', [DashboardController::class, 'index'])->name('dashboard.main');
+// Create user
 Route::get('/dashboard/create-user', [UserController::class, 'create'])->name('Dashboard.create-user');
 Route::middleware(['auth'])->group(function () {
-    Route::delete('users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
+    // Delete user
+Route::delete('users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
 });
+// Edit user
+Route::get('/users/{id}/edit-role', [UserController::class, 'editRole'])->name('users.editRole');
+Route::put('/users/{id}/update-role', [UserController::class, 'updateRole'])->name('users.updateRole');
+

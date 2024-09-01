@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sport_types', function (Blueprint $table) {
+        Schema::create('opening_hours', function (Blueprint $table) {
             $table->id();
-            $table->string('sport_type');
-            $table->string('sport_image')->nullable();
+            $table->integer('start_at');
+            $table->integer('duration');
+            $table->date('day');
+            $table->foreignId('field_id')->constrained()->onDelete('cascade');
             $table->timestamps();
-            $table->softDeletes(); // soft Delete
-
         });
     }
 
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sport_types');
+        Schema::dropIfExists('opening_hours');
     }
 };
