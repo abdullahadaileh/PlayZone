@@ -76,6 +76,7 @@ Route::get('/blogs', function () {
     return view('landing_page.pages.blogs');
 })->name('blogs');
 
+Route::get('/show-available-times', [BookingController::class, 'showAvailableTimes'])->name('showAvailableTimes');
 
 
 ///Dashboard 

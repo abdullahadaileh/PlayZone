@@ -69,6 +69,8 @@
                             <p class="mb-4" style="color: #555;"><strong>Field Type :</strong>{{ $field->fieldType-> field_type}}</p>
                             <p class="mb-4" style="color: #555;"><strong>Sport Type :</strong>{{ $field->sportType-> sport_type}}</p>
                             <a class="btn btn-primary rounded-pill py-2 px-4" href="{{ route('services.show', $field->id) }}">View Details</a>
+                            <a class="btn btn-primary rounded-pill py-2 px-4" href="{{ route('book')}}">Book Now</a>
+
                         </div>
                     </div>
                 </div>
