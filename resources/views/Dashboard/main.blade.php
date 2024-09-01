@@ -186,14 +186,17 @@
                                         <td class="text-right">{{ $user->created_at->format('Y-m-d H:i:s') }}</td>
                                         <td class="text-right">{{ $user->updated_at->format('Y-m-d H:i:s') }}</td>
                                         <td class="text-right">
-                                            <!-- Delete Button -->
+                                            
                                             @if(auth()->user()->role === 'superadmin')
-                                            <form action="{{ route('users.destroy', $user->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this user?');">
+                                            <!-- Edit Role Button -->
+                                            <a href="{{ route('users.editRole', $user->id) }}" class="btn btn-primary btn-sm">Edit Role</a>
+                                            <!-- Delete Button -->
+                                            <form action="{{ route('users.destroy', $user->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this user?');" style="display:inline;">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                                             </form>
-                                        @endif
+                                            @endif
                                         </td>
                                     </tr>
                                 @endforeach

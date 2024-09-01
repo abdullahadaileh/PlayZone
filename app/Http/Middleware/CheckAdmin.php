@@ -17,14 +17,17 @@ class CheckAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::check() && Auth::user()->role === 'admin' ) {
+        if(Auth::check()){
+            
+            if (Auth::user()->role === 'admin' ) {
+                return $next($request);
+            }
+            
+            elseif (Auth::user()->role === 'superadmin') {
             return $next($request);
-        }
 
-        elseif (Auth::check()&& Auth::user()->role === 'superadmin') {
-            return $next($request);
+            }       
         }
-        
         return redirect('/');
     }
 }

@@ -9,16 +9,13 @@ class UserController extends Controller
 {
     public function index()
     {
-        // Fetch all users from the database
         $users = User::all();
 
-        // Return a view with the users data
         return view('users.index', compact('users'));
     }
     
     public function create()
     {
-        // Return the view for creating a new user
         return view('Dashboard.create-user');
     }
 
@@ -41,18 +38,36 @@ class UserController extends Controller
         return redirect()->route('dashboard.main')->with('success', 'User created successfully.');
     }
 
+    // edite user role
+    public function editRole($id)
+    {
+        $user = User::findOrFail($id);
+        return view('Dashboard.edit-role', compact('user'));
+    }
+
+    public function updateRole(Request $request, $id)
+    {
+        $request->validate([
+            'role' => 'required|in:admin,superadmin,user',
+        ]);
+
+        $user = User::findOrFail($id);
+        $user->role = $request->role;
+        $user->save();
+
+        return redirect()->route('dashboard.main')->with('success', 'User role updated successfully.');
+    }
+
     public function destroy($id)
     {
-        // Check if the current user is a super admin
+
         if (auth()->user()->role !== 'superadmin') {
             return redirect()->back()->with('error', 'You do not have permission to perform this action.');
         }
 
-        // Find the user by ID and delete them
         $user = User::findOrFail($id);
         $user->delete();
 
-        // Redirect to the dashboard with a success message
         return redirect()->route('dashboard.main')->with('success', 'User deleted successfully.');
     }
 }
