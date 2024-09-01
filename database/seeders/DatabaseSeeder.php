@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             field_typeSeeder::class,
             fieldSeeder::class,
             bookingSeeder::class,
+            opening_hoursSeeder::class,
         ]);
     }
 }
