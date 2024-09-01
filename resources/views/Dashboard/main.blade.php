@@ -23,7 +23,7 @@
                                                 <div class="overview__inner">
                                                     <div class="overview-box clearfix">
                                                         <div class="icon">
-                                                            <i class="zmdi zmdi-account-o"></i>
+                                                            <i class="fa-solid fa-user" style="color: #ffffff;"></i>
                                                         </div>
                                                         <div class="text">
                                                             <h2>{{ $usersCount }}</h2>
@@ -41,7 +41,7 @@
                                                 <div class="overview__inner">
                                                     <div class="overview-box clearfix">
                                                         <div class="icon">
-                                                            <i class="zmdi zmdi-account-o"></i>
+                                                            <i class="fa-solid fa-user-tie" style="color: #ffffff;"></i>
                                                         </div>
                                                         <div class="text">
                                                             <h2>{{ $adminsCount }}</h2>
@@ -59,8 +59,9 @@
                                                 <div class="overview__inner">
                                                     <div class="overview-box clearfix">
                                                         <div class="icon">
-                                                            <i class="fas fa-flag"></i>
-                                                        </div>                                                                                                                <div class="text">
+                                                            <i class="fa-solid fa-money-bill" style="color: #ffffff;"></i>
+                                                        </div>
+                                                        <div class="text">
                                                             <h2>{{ $fieldsCount }}</h2>
                                                             <span>PlayZones</span>
                                                         </div>
@@ -76,7 +77,7 @@
                                                 <div class="overview__inner">
                                                     <div class="overview-box clearfix">
                                                         <div class="icon">
-                                                            <i class="fas fa-calendar-check"></i>
+                                                            <i class="fas fa-calendar-check" style="color: #ffffff;"></i>
                                                         </div>
                                                         <div class="text">
                                                             <h2>{{ $bookingsCount }}</h2> <!-- تغيير المتغير إلى $bookingsCount -->
@@ -92,13 +93,7 @@
                                     </div>
                                     
                                     {{-- end User Statistics: Display the number of users and admins.end --}}
- 
-                                    
 
-
-                                    
-                                    
-                                    
                                     <!-- Users Section -->
                                     <section id="users" class="users section">
                                         <!-- Section Title -->
