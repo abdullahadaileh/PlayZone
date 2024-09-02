@@ -81,7 +81,7 @@ Route::get('/blogs', function () {
 ///Dashboard 
 Route::get('/dash', function () {
     return view('Dashboard.main');
-});
+}); 
 
 
 Route::get('/dash', [DashboardController::class, 'index'])->middleware(['auth','admin'])->name('dashboard.main');
@@ -97,4 +97,3 @@ Route::put('/users/{id}/update-role', [UserController::class, 'updateRole'])->na
 
 // contact us
 Route::get('/dash/contact-us', [ContactUsController::class, 'index'])->name('dashboard.contact_us');
-
