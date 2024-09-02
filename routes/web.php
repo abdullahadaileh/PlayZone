@@ -166,28 +166,21 @@ Route::patch('/update-password', function () {
 
 Route::get('/dash', [DashboardController::class, 'index'])->middleware(['auth','admin'])->name('dashboard.main');
 
-<<<<<<< HEAD
-// Create user
-Route::get('/dashboard/create-user', [UserController::class, 'create'])->name('Dashboard.create-user');
-Route::middleware(['auth','admin'])->group(function () {
-=======
-Route::get('/dash', [DashboardController::class, 'index'])->middleware(['auth','admin'])->name('dashboard.main');
+
 // Create user
 Route::get('/dash/create-user', [UserController::class, 'create'])->name('dash.create-user');
-Route::middleware(['auth'])->group(function () {
->>>>>>> 9a419d7399047976d42b0eb59ebb9e5a7c79523a
+Route::middleware(['auth','admin'])->group(function () {
+
+// Create user
+
     // Delete user
 Route::delete('users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
 });
 // Edit user
-<<<<<<< HEAD
+
 Route::get('/users/{id}/edit-role', [UserController::class, 'editRole'])->middleware(['auth'])->name('users.editRole');
 Route::put('/users/{id}/update-role', [UserController::class, 'updateRole'])->middleware(['auth'])->name('users.updateRole');
-=======
-Route::get('/users/{id}/edit-role', [UserController::class, 'editRole'])->name('users.editRole');
-Route::put('/users/{id}/update-role', [UserController::class, 'updateRole'])->name('users.updateRole');
+
 
 // contact us
 Route::get('/dash/contact-us', [ContactUsController::class, 'index'])->name('dashboard.contact_us');
-
->>>>>>> 9a419d7399047976d42b0eb59ebb9e5a7c79523a
