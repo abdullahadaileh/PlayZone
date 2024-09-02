@@ -2,7 +2,7 @@
 @section('content')
 <style>
     .logpage{
-        background-image: url();
+        background-image: url({{ asset('landing/img/cat_football.jpg') }});
     }
     .card {
         border-radius: 10px;
@@ -66,7 +66,7 @@
     }
     </style>
 
-
+<div class="logpage">
 <div class="container">
     <div class="row justify-content-center align-items-center">
         <div class="col-md-12">
@@ -145,5 +145,6 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 @endsection
