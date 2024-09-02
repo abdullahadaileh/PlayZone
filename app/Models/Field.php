@@ -26,6 +26,11 @@ class Field extends Model
     {
         return $this->hasMany(Booking::class);
     }
+    
+    public function opening_hours()
+    {
+        return $this->hasMany(opening_hours::class);
+    }
 
     public function fieldImages()
     {

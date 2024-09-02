@@ -3,18 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Models\opening_hours;
-use App\Models\Booking;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class BookingController extends Controller
+class OpeningHoursController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $booked_hours = opening_hours::whereBookingsId($booked_id)->all();
-        return view('Dashboard.bookings', ['bookings' => $bookings]);
+        
     }
 
     /**
@@ -36,7 +35,7 @@ class BookingController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Booking $booking)
+    public function show(opening_hours $opening_hours)
     {
         //
     }
@@ -44,7 +43,7 @@ class BookingController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Booking $booking)
+    public function edit(opening_hours $opening_hours)
     {
         //
     }
@@ -52,7 +51,7 @@ class BookingController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Booking $booking)
+    public function update(Request $request, opening_hours $opening_hours)
     {
         //
     }
@@ -60,7 +59,7 @@ class BookingController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Booking $booking)
+    public function destroy(opening_hours $opening_hours)
     {
         //
     }
