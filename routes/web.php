@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Book_Page;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\FieldController;
@@ -12,6 +13,8 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Landing;
+
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
@@ -62,9 +65,7 @@ Route::resource('sport-types', SportTypeController::class);
 /////landing_page
 
 
-Route::get('/', function () {
-    return view('landing_page.landing');
-})->name('Home');
+Route::get('/', [Landing::class,'index'])->name('Home');
 
 Route::get('/contact', function () {
     return view('landing_page.pages.contact');
@@ -77,7 +78,11 @@ Route::resource('services', ServiceController::class);
 Route::get('/blogs', function () {
     return view('landing_page.pages.blogs');
 })->name('blogs');
+// zaina change
+// Route::get('/book', [Book_Page::class,'index'])->name('book');
+Route::get('/book/{field_id}', [Book_Page::class, 'index'])->name('book');
 
+// Route::get('/show-available-times', [BookingController::class, 'showAvailableTimes'])->name('showAvailableTimes');
 
 
 ///Dashboard 
@@ -184,3 +189,5 @@ Route::put('/users/{id}/update-role', [UserController::class, 'updateRole'])->mi
 
 // contact us
 Route::get('/dash/contact-us', [ContactUsController::class, 'index'])->name('dashboard.contact_us');
+////////////change zaina
+Route::put('/bookings/{id}/updateStatus', [BookingController::class, 'updateStatus'])->name('bookings.updateStatus');

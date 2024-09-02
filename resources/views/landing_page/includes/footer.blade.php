@@ -8,38 +8,19 @@
                         <a href="{{ url('/') }}" class="p-0">
                     <img src="{{ asset('landing/img/image.png') }}" class="img-fluid w-50  rounded" alt="Service 4">
                         </a>
-                        <p class="mb-4">Dolor amet sit justo amet elitr clita ipsum elitr est. Lorem ipsum dolor sit amet, consectetur adipiscing...</p>
-                        <div class="d-flex">
-                            <a href="#" class="bg-primary d-flex rounded align-items-center py-2 px-3 me-2">
-                                <i class="fas fa-apple-alt text-white"></i>
-                                <div class="ms-3">
-                                    <small class="text-white">Download on the</small>
-                                    <h6 class="text-white">App Store</h6>
-                                </div>
-                            </a>
-                            <a href="#" class="bg-dark d-flex rounded align-items-center py-2 px-3 ms-2">
-                                <i class="fas fa-play text-primary"></i>
-                                <div class="ms-3">
-                                    <small class="text-white">Get it on</small>
-                                    <h6 class="text-white">Google Play</h6>
-                                </div>
-                            </a>
-                        </div>
+                        <p class="mb-4">Book Your Perfect Play Space Anytime, Anywhere!</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-2">
                     <div class="footer-item">
                         <h4 class="text-white mb-4">Quick Links</h4>
                         <a href="#"><i class="fas fa-angle-right me-2"></i> About Us</a>
-                        <a href="#"><i class="fas fa-angle-right me-2"></i> Feature</a>
-                        <a href="#"><i class="fas fa-angle-right me-2"></i> Attractions</a>
-                        <a href="#"><i class="fas fa-angle-right me-2"></i> Tickets</a>
-                        <a href="#"><i class="fas fa-angle-right me-2"></i> Blog</a>
+                        <a href="#"><i class="fas fa-angle-right me-2"></i> Courts</a>
                         <a href="#"><i class="fas fa-angle-right me-2"></i> Contact us</a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3">
-                    <div class="footer-item">
+                    <!-- <div class="footer-item">
                         <h4 class="text-white mb-4">Support</h4>
                         <a href="#"><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
                         <a href="#"><i class="fas fa-angle-right me-2"></i> Terms & Conditions</a>
@@ -47,26 +28,26 @@
                         <a href="#"><i class="fas fa-angle-right me-2"></i> Support</a>
                         <a href="#"><i class="fas fa-angle-right me-2"></i> FAQ</a>
                         <a href="#"><i class="fas fa-angle-right me-2"></i> Help</a>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3">
                     <div class="footer-item">
                         <h4 class="text-white mb-4">Contact Info</h4>
                         <div class="d-flex align-items-center">
                             <i class="fas fa-map-marker-alt text-primary me-3"></i>
-                            <p class="text-white mb-0">123 Street New York.USA</p>
+                            <p class="text-white mb-0">123 Street Amman.JO</p>
                         </div>
                         <div class="d-flex align-items-center">
                             <i class="fas fa-envelope text-primary me-3"></i>
-                            <p class="text-white mb-0">info@example.com</p>
+                            <p class="text-white mb-0">playzone@gmail.com</p>
                         </div>
                         <div class="d-flex align-items-center">
                             <i class="fa fa-phone-alt text-primary me-3"></i>
-                            <p class="text-white mb-0">(+012) 3456 7890</p>
+                            <p class="text-white mb-0">+962 799007721</p>
                         </div>
                         <div class="d-flex align-items-center mb-4">
                             <i class="fab fa-firefox-browser text-primary me-3"></i>
-                            <p class="text-white mb-0">Yoursite@ex.com</p>
+                            <p class="text-white mb-0">playzonefeeds@gmail.com</p>
                         </div>
                         <div class="d-flex">
                             <a class="btn btn-primary btn-sm-square rounded-circle me-3" href="#"><i class="fab fa-facebook-f text-white"></i></a>
@@ -82,7 +63,7 @@
     <!-- Footer End -->
     
     <!-- Copyright Start -->
-    <div class="container-fluid copyright py-4">
+    <!-- <div class="container-fluid copyright py-4">
         <div class="container">
             <div class="row g-4 align-items-center">
                 <div class="col-md-6 text-center text-md-start mb-md-0">
@@ -93,7 +74,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Copyright End -->
 
     <!-- Back to Top -->

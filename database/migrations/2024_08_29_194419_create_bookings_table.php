@@ -13,13 +13,15 @@ return new class extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
-            $table->integer('total_price');
-            $table->string('status');
+            $table->decimal('total_price', 8, 2);
+            $table->string('status')->default('pending');
+            $table->date('date');
+            $table->time('start_at');  
+            $table->integer('duration'); 
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->foreignId('field_id')->constrained()->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes(); // soft Delete
-
         });
     }
 
