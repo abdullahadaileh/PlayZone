@@ -7,6 +7,7 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <title>PlayZone</title>
+    <link rel="icon" href="{{ asset('landing/img/playzone-favicon-color.png') }}" type="image/png">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
