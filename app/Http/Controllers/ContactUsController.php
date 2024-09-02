@@ -12,7 +12,9 @@ class ContactUsController extends Controller
      */
     public function index()
     {
-        //
+        $contacts = Contact_us::with('user')->get();
+    
+        return view('dashboard.contact_us', compact('contacts'));
     }
 
     /**
@@ -28,7 +30,24 @@ class ContactUsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Validation
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255',
+            'subject' => 'required|string|max:255',
+            'message' => 'required|string',
+        ]);
+
+        // Create a new contact record
+        Contact_us::create([
+            'user_name' => $request->name,
+            'user_email' => $request->email,
+            'user_subject' => $request->subject,
+            'user_message' => $request->message,
+            'user_id' => auth()->id(), 
+        ]);
+
+        return redirect()->back();
     }
 
     /**
