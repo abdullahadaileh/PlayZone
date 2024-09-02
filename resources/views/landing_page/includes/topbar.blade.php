@@ -19,7 +19,7 @@
                         <small><i class="fa fa-home text-primary me-2"></i>{{ Auth::user()->name }}</small>
                     </a>
                     <div class="dropdown-menu rounded">
-                        <a href="#" class="dropdown-item"><i class="fas fa-user-alt me-2"></i> My Profile</a>
+                        <a href="{{ route('profile')}}" class="dropdown-item"><i class="fas fa-user-alt me-2"></i> My Profile</a>
                         <a href="#" class="dropdown-item"><i class="fas fa-comment-alt me-2"></i> Inbox</a>
                         @if (Auth::check() && (Auth::user()->role === 'admin' || Auth::user()->role === 'superadmin'))
                         <a href="{{ url('/dash') }}" class="dropdown-item">

@@ -13,8 +13,8 @@ class BookingController extends Controller
      */
     public function index()
     {
-        $booked_hours = opening_hours::whereBookingsId($booked_id)->all();
-        return view('Dashboard.bookings', ['bookings' => $bookings]);
+        $bookings = booking::all();
+        return view('dashboard.bookings', ['bookings'=> $bookings]);
     }
 
     /**

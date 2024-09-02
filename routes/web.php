@@ -12,7 +12,9 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
-
+use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -83,16 +85,93 @@ Route::get('/dash', function () {
     return view('Dashboard.main');
 });
 
+Route::get('/profile', function () {
+    $user = Auth::user();
+    return view('landing_page.pages.profile', ['user'=> $user]);
+})->name('profile')->middleware(['auth']);
 
-Route::get('/dash', [DashboardController::class, 'index'])->middleware(['auth','admin']);
-Route::get('/dash', [DashboardController::class, 'index'])->name('dashboard.main');
+Route::get('/edit-profile', function () {
+    $user = Auth::user();
+    return view('landing_page.pages.edit-profile', ['user'=> $user]);
+})->middleware(['auth']);
+
+
+// update user information
+Route::patch('/update-user', function() {
+    // Validate the request data
+
+
+    $validatedData = request()->validate([
+        'name' => ['required'],
+        'email' => ['required', 'email'],
+        'image' => ['nullable', 'image', 'mimes:jpeg,png,jpg', 'max:2048'], 
+        'phone' => ['nullable', 'regex:/^07[0-9]{8}$/'],
+    ]);
+    
+
+    $user = Auth::user();
+
+    if(request()->has('image'))
+    {
+        $file = request()->file('image');
+        $extention = $file->getClientOriginalExtension();
+
+        $filename = time() .'.'. $extention;
+
+        $path = 'uploads/user_image/';
+        $file->move( $path, $filename);
+
+        $user->update([
+            'image' => $path.$filename,
+        ]);
+    }
+
+    // Get the authenticated user
+
+
+
+    // Update the user's other information
+    $user->update([
+        'name' => $validatedData['name'],
+        'email' => $validatedData['email'],
+        'phone' => $validatedData['phone'] ?? $user->phone,
+    ]);
+
+    // Redirect with success message
+    return redirect('profile')->with('success', 'Profile updated successfully.');
+})->middleware(['auth']);
+
+
+Route::get('/edit-password', function () {
+    $user = Auth::user();
+    return view('landing_page.pages.edit-password', ['user'=> $user]);
+})->middleware(['auth']);
+
+Route::patch('/update-password', function () {
+    request()->validate([
+        'new' => ['required','string','min:8'],
+        'confirm' => ['required','string','min:8','same:new'],
+    ]);
+
+    $user = Auth::user();
+
+    $user->update([
+        'password' => bcrypt(request()->new),
+    ]);
+
+    return redirect('profile')->with('success', 'password updated successfully.');
+})->middleware(['auth']);
+
+
+
+Route::get('/dash', [DashboardController::class, 'index'])->middleware(['auth','admin'])->name('dashboard.main');
+
 // Create user
 Route::get('/dashboard/create-user', [UserController::class, 'create'])->name('Dashboard.create-user');
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth','admin'])->group(function () {
     // Delete user
 Route::delete('users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
 });
 // Edit user
-Route::get('/users/{id}/edit-role', [UserController::class, 'editRole'])->name('users.editRole');
-Route::put('/users/{id}/update-role', [UserController::class, 'updateRole'])->name('users.updateRole');
-
+Route::get('/users/{id}/edit-role', [UserController::class, 'editRole'])->middleware(['auth'])->name('users.editRole');
+Route::put('/users/{id}/update-role', [UserController::class, 'updateRole'])->middleware(['auth'])->name('users.updateRole');
