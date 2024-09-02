@@ -12,7 +12,11 @@
     </div>
 </div>
 
-
+ @if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
 <!-- Services Start -->
 <div class="container-fluid service py-5">
     <div class="container py-5">
@@ -46,7 +50,7 @@
                 </select>
             </div>
             <div class="col-md-4">
-                <a href="{{ route('services.index') }}" class="btn btn-secondary w-100">Show All</a>
+                <a href="{{ route('services.index') }}" class="btn btn-success w-100">Show All</a>
             </div>
         </div>
     </form>
@@ -69,7 +73,7 @@
                             <p class="mb-4" style="color: #555;"><strong>Field Type :</strong>{{ $field->fieldType-> field_type}}</p>
                             <p class="mb-4" style="color: #555;"><strong>Sport Type :</strong>{{ $field->sportType-> sport_type}}</p>
                             <a class="btn btn-primary rounded-pill py-2 px-4" href="{{ route('services.show', $field->id) }}">View Details</a>
-                            <a class="btn btn-primary rounded-pill py-2 px-4" href="{{ route('book')}}">Book Now</a>
+<a class="btn btn-primary rounded-pill py-2 px-4" href="{{ route('book', ['field_id' => $field->id]) }}">Book Now</a>
 
                         </div>
                     </div>

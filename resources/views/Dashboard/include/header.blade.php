@@ -44,7 +44,7 @@
                                 <i class="fas fa-table" style="color: #00d084;"></i>Subscribers/Users</a>
                         </li>
                         <li>
-                            <a href="form.html">
+                            <a href="{{route('bookings.index')}}">
                                 <i class="far fa-check-square" style="color: #00d084;"></i>Reservations Details</a>
                         </li>
                         <li>
@@ -110,8 +110,8 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="form.html">
-                                <i class="far fa-check-square" style="color: #00d084;"></i>Reservations Details</a>
+                            <a href="{{route('bookings.index')}}">
+                                <i class="far fa-check-square" style="color: #00d084;"></i>Booking Details</a>
                         </li>
                    
                         <!-- zaina change -->

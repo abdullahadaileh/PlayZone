@@ -49,7 +49,7 @@
             <p class="mb-4 {{ $field->field_avilable == 0 ? 'text-success' : 'text-danger' }}">{{ $field->field_avilable == 0 ? 'Available' : 'Not Available' }}</p>
             
          
-         <a class="btn btn-primary rounded-pill py-2 px-4" href="{{ route('book')}}">Book Now</a>
+<a class="btn btn-primary rounded-pill py-2 px-4" href="{{ route('book', ['field_id' => $field->id]) }}">Book Now</a>
                                            
             <a href="{{ route('services.index') }}" class="btn btn-success rounded-pill py-2 px-4">Back to Fields</a>
         </div>

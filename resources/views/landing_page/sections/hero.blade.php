@@ -13,8 +13,7 @@
 <p class="mb-5 fs-5">Discover the ultimate playground for sports enthusiasts. With PlayZone, you can easily book courts for your favorite sports, connect with fellow players, and enjoy a seamless experience. Elevate your game today!</p>
 
                                         <div class="d-flex justify-content-center justify-content-md-end flex-shrink-0 mb-4">
-                                            <a class="btn btn-light rounded-pill py-3 px-4 px-md-5 me-2" href="#"><i class="fas fa-play-circle me-2"></i> Watch Video</a>
-                                            <a class="btn btn-primary rounded-pill py-3 px-4 px-md-5 ms-2" href="#">Learn More</a>
+                                            <a class="btn btn-primary rounded-pill py-3 px-4 px-md-5 ms-2" href="{{ route('services.index') }}">Show Courts</a>
                                         </div>
                                         <div class="d-flex align-items-center justify-content-center justify-content-md-end">
                                             <h2 class="text-white me-2">Follow Us:</h2>
@@ -43,8 +42,7 @@
 <p class="mb-5 fs-5">Discover the ultimate playground for sports enthusiasts. With PlayZone, you can easily book courts for your favorite sports, connect with fellow players, and enjoy a seamless experience. Elevate your game today!</p>
 
                                         <div class="d-flex justify-content-center flex-shrink-0 mb-4">
-                                            <a class="btn btn-light rounded-pill py-3 px-4 px-md-5 me-2" href="#"><i class="fas fa-play-circle me-2"></i> Watch Video</a>
-                                            <a class="btn btn-primary rounded-pill py-3 px-4 px-md-5 ms-2" href="#">Learn More</a>
+                                            <a class="btn btn-primary rounded-pill py-3 px-4 px-md-5 ms-2" href="{{ route('services.index') }}">Show Courts</a>
                                         </div>
                                         <div class="d-flex align-items-center justify-content-center">
                                             <h2 class="text-white me-2">Follow Us:</h2>

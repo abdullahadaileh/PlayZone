@@ -13,6 +13,7 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Landing;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,9 +62,7 @@ Route::resource('sport-types', SportTypeController::class);
 /////landing_page
 
 
-Route::get('/', function () {
-    return view('landing_page.landing');
-})->name('Home');
+Route::get('/', [Landing::class,'index'])->name('Home');
 
 Route::get('/contact', function () {
     return view('landing_page.pages.contact');
@@ -77,9 +76,10 @@ Route::get('/blogs', function () {
     return view('landing_page.pages.blogs');
 })->name('blogs');
 // zaina change
-Route::get('/book', [Book_Page::class,'index'])->name('book');
+// Route::get('/book', [Book_Page::class,'index'])->name('book');
+Route::get('/book/{field_id}', [Book_Page::class, 'index'])->name('book');
 
-Route::get('/show-available-times', [BookingController::class, 'showAvailableTimes'])->name('showAvailableTimes');
+// Route::get('/show-available-times', [BookingController::class, 'showAvailableTimes'])->name('showAvailableTimes');
 
 
 ///Dashboard 
@@ -100,3 +100,5 @@ Route::delete('users/{id}', [UserController::class, 'destroy'])->name('users.des
 Route::get('/users/{id}/edit-role', [UserController::class, 'editRole'])->name('users.editRole');
 Route::put('/users/{id}/update-role', [UserController::class, 'updateRole'])->name('users.updateRole');
 
+////////////change zaina
+Route::put('/bookings/{id}/updateStatus', [BookingController::class, 'updateStatus'])->name('bookings.updateStatus');
