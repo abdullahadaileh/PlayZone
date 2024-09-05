@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\sport_type;
+use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 
 class SportTypeController extends Controller
@@ -13,6 +14,7 @@ class SportTypeController extends Controller
     public function index()
     {
         $sports_type = sport_type::all();
+        // dd($sports_type);
         return view('Dashboard.Sports.index')->with('sports_type', $sports_type);
     }
     
@@ -21,8 +23,9 @@ class SportTypeController extends Controller
      */
     public function create()
     {
-        $sports_type = sport_type::all();
-        return view('Dashboard.Sports.create')->with('sports_type', $sports_type);
+        // $sports_type = sport_type::all();
+        // return view('Dashboard.Sports.create')->with('sports_type', $sports_type);
+            return view('Dashboard.Sports.create');
     }
 
     /**
@@ -30,12 +33,29 @@ class SportTypeController extends Controller
      */
     public function store(Request $request)
     {
-        sport_type::create([
+        // Create the initial sport_type entry without the image
+        $sportType = sport_type::create([
             'sport_type' => $request->input('sport_type'),
-            'sport_image' => $request->input('sport_image'),
         ]);
+        
+        $filename = NULL;
+        $path = NULL;
 
-        return redirect()->route('sport-types.index')->with('success', 'Product created successfully.');
+        // Sport Type Image
+        if ($request->hasFile('sport_image')) {
+            $file = $request->file('sport_image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extension;
+            $path = 'landing/img/';
+            $file->move($path, $filename);
+            
+            sport_type::create([
+                'sport_type' => $request->sport_type,
+                'sport_image' => $path.$filename,
+            ]);
+        }
+        return redirect()->route('sport-types.index')->with('success', 'Sport Type created successfully.');
+        // return redirect()->route('sport-types.index')->with('success', 'Sport Type created successfully.');
     }
 
     /**
@@ -58,21 +78,53 @@ class SportTypeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, sport_type $sport_type, $id)
-    {
-        $sport_type = sport_type::findorFail($id);
-        $sport_type->update([
-            "sport_type" => $request->sport_type,
-            "sport_image" => $request->sport_image,
-        ]);
-        return redirect()->route('sport_type.index'); 
+    public function update(Request $request, $id)
+{
+    // Find the existing sport_type record
+    $sportType = sport_type::findOrFail($id);
+
+    // Update sport_type without image
+    $sportType->update([
+        'sport_type' => $request->input('sport_type'),
+    ]);
+
+    // Initialize filename and path
+    $filename = NULL;
+    $path = NULL;
+
+    // Check if a new image file is uploaded
+    if ($request->hasFile('sport_image')) {
+        // Remove the old image if it exists
+        if ($sportType->sport_image && file_exists(public_path($sportType->sport_image))) {
+            unlink(public_path($sportType->sport_image));
+        }
+
+        // Upload the new image
+        $file = $request->file('sport_image');
+        $extension = $file->getClientOriginalExtension();
+        $filename = time() . '.' . $extension;
+        $path = 'landing/img/';
+        $file->move(public_path($path), $filename);
+
+        // Update the record with the new image path
+        $sportType->sport_image = $path . $filename;
     }
+
+    // Save the updated record
+    $sportType->save();
+
+    // Redirect with success message
+    return redirect()->route('sport-types.index')->with('success', 'Sport Type updated successfully.');
+}
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(sport_type $sport_type)
+    public function destroy($id)
     {
-        //
+        // $product->delete();
+        sport_type::findorFail($id)->delete(); 
+        // return redirect()->route('sport-types.index');
+        return redirect()->back()->with('success', 'Sport Type Deleted successfully.');
     }
 }

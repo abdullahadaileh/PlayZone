@@ -5,8 +5,8 @@
         <div class="main-content">
             <div style="width: 100%;" class="col-lg-6">
                 <div class="card">
-                    <div class="card-header">
-                        <strong style="color: #00D084;">Add Sport Type</strong> for your field
+                    <div class="card-header" style="background-color: #00D084;">
+                        <strong style="color: white; text-align:center;">Add New Sport Type</strong>
                     </div>
                     <div class="card-body card-block">
                         <form action="{{ route('sport-types.store') }}" method="POST" enctype="multipart/form-data" class="form-horizontal">
@@ -42,7 +42,7 @@
                             </div> --}}
                             <div class="mb-3">
                                 <label for="formFile" class="form-label">Sport image</label>
-                                <input class="form-control" type="file" id="formFile">
+                                <input class="form-control" type="file" id="formFile" name="sport_image">
                               </div>
                               
                             {{-- <div class="row form-group">

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminProfileController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\FieldController;
@@ -90,3 +91,7 @@ Route::get('/dashboard/create-user', [UserController::class, 'create'])->name('D
 Route::middleware(['auth'])->group(function () {
     Route::delete('users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
 });
+
+//Admin Profile
+Route::resource('a_profile', AdminProfileController::class)->middleware(['auth','admin']);
+// Route::rec('/a_profile', [AdminProfileController::class, 'edit'])->middleware(['auth','admin'])->name('profile');

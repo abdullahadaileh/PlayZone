@@ -19,7 +19,7 @@
                     <ul class="navbar-mobile__list list-unstyled">
                         <li class="has-sub">
                             <a class="js-arrow" href="{{url('dash')}}">
-                                <i class="fas fa-tachometer-alt" style="color: #00d084;"></i>Dashboard</a>
+                                <i class="fa-solid fa-table" style="color: #00d084;"></i>Dashboard</a>
                         </li>
                         <li>
                             <a href="chart.html">
@@ -69,7 +69,7 @@
                     <ul class="list-unstyled navbar__list">
                         <li class="has-sub">
                             <a class="js-arrow" href="{{url('dash')}}">
-                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                                <i class="fa-solid fa-table" style="color: #00d084;"></i>Dashboard</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
                                     <a href="{{ url('/dash') }}">Dashboard 1</a>
@@ -283,8 +283,8 @@
                                                         <i class="zmdi zmdi-home"></i>Home</a>
                                                 </div>
                                                 <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-account"></i>Account</a>
+                                                    <a href={{route('a_profile.index')}}>
+                                                        <i class="zmdi zmdi-account"></i>Profile</a>
                                                 </div>
                                                 <div class="account-dropdown__item">
                                                     <a href="#">
