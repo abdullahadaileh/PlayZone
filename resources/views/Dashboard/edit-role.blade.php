@@ -16,7 +16,6 @@
             <select name="role" id="role" class="form-control">
                 <option value="user" {{ $user->role == 'user' ? 'selected' : '' }}>User</option>
                 <option value="admin" {{ $user->role == 'admin' ? 'selected' : '' }}>Admin</option>
-                <option value="superadmin" {{ $user->role == 'superadmin' ? 'selected' : '' }}>Superadmin</option>
             </select>
         </div>
 

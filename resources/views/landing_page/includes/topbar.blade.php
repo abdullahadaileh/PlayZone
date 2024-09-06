@@ -13,14 +13,13 @@
         <div class="col-lg-4 text-center text-lg-end">
             <div class="d-inline-flex align-items-center" style="height: 45px;">
                 @auth
-                <!-- تظهر إذا كان المستخدم مسجل دخول -->
+
                 <div class="dropdown ms-4">
                     <a href="#" class="dropdown-toggle text-dark" data-bs-toggle="dropdown">
                         <small><i class="fa fa-home text-primary me-2"></i>{{ Auth::user()->name }}</small>
                     </a>
                     <div class="dropdown-menu rounded">
                         <a href="{{ route('profile')}}" class="dropdown-item"><i class="fas fa-user-alt me-2"></i> My Profile</a>
-                        <a href="#" class="dropdown-item"><i class="fas fa-comment-alt me-2"></i> Inbox</a>
                         @if (Auth::check() && (Auth::user()->role === 'admin' || Auth::user()->role === 'superadmin'))
                         <a href="{{ url('/dash') }}" class="dropdown-item">
                             <i class="fas fa-tachometer-alt me-2"></i> Admin Dashboard

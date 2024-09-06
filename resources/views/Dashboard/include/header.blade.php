@@ -68,14 +68,10 @@
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
                         {{-- /RGD --}}
-                        {{-- <li>
-                            <a href="{{url('dash')}}">
-                                <i class="fa-solid fa-users" style="color: #00d084;"></i>Subscribers/Users</a>
-                        </li>
                         <li>
-                            <a href="{{url('dash/create-user')}}">
-                                <i class="fa-solid fa-users" style="color: #00d084;"></i>Subscribers/Users</a>
-                        </li> --}}
+                            <a href="{{url('dash')}}">
+                                <i class="fa-solid fa-users" style="color: #00d084;"></i>Dashboard</a>
+                        </li>
                         {{-- Add sports --}}
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
@@ -85,7 +81,7 @@
                                     <a href="{{url('dash/create-user')}}"><i class="fa-regular fa-plus" style="color: #00d084;"></i>Add User</a>
                                 </li>
                                 <li>
-                                    <a href="{{url('dash')}}"><i class="fa-solid fa-users" style="color: #00d084;"></i>User Details</a>
+                                    <a href="{{url('users')}}"><i class="fa-solid fa-users" style="color: #00d084;"></i>User Details</a>
                                 </li>
                             </ul>
                         </li>    
@@ -104,15 +100,15 @@
                      <!-- zaina change -->
                       <li class="has-sub">
                             <a class="js-arrow" href="#">
-                                <i class="fa-regular fa-paste" style="color: #00d084;"></i>Zones</a>
+                                <i class="fa-regular fa-paste" style="color: #00d084;"></i>Fields</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                <li>
+                                     <a href="{{route('fields.create')}}"><i class="fa-solid fa-plus"></i>New Field</a>
+                                </li>
                                <li>
                         <a href="{{route('fields.index')}}">
-                           <i class="fa-regular fa-futbol" style="color: #00d084;"></i> All Zones</a>
+                           <i class="fa-regular fa-futbol" style="color: #00d084;"></i> All Field</a>
                         </li>
-                                <li>
-                                     <a href="{{route('fields.create')}}"><i class="fa-solid fa-plus"></i>New Zone</a>
-                                </li>
                                
                             </ul>
                         </li>
@@ -144,7 +140,7 @@
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
-                                            <img src="{{ $user->image? $user->image : 'https://avatar.iran.liara.run/public/boy?username=Ash' }}" class="rounded mx-auto d-block w-100 h-auto" alt="Profile Picture">
+                                            {{-- <img src="{{ $user->image? $user->image : 'https://avatar.iran.liara.run/public/boy?username=Ash' }}" class="rounded mx-auto d-block w-100 h-auto" alt="Profile Picture"> --}}
                                         </div>
                                         <div class="content">
                                             <a role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -156,7 +152,7 @@
                                             <div class="info clearfix">
                                                 <div class="image">
                                                     <a href="#">
-                                                        <img src="{{ $user->image? $user->image : 'https://avatar.iran.liara.run/public/boy?username=Ash' }}" class="rounded mx-auto d-block w-100 h-auto" alt="Profile Picture">
+                                                        {{-- <img src="{{ $user->image? $user->image : 'https://avatar.iran.liara.run/public/boy?username=Ash' }}" class="rounded mx-auto d-block w-100 h-auto" alt="Profile Picture"> --}}
                                                     </a>
                                                 </div>
                                                 <div class="content">

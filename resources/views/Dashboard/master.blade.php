@@ -33,16 +33,29 @@
 
     <!-- Main CSS-->
     <link href="{{ asset('Dashboard/css/theme.css') }}" rel="stylesheet" media="all">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <!-- FontAwesome CDN-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        body{
+            background-color: #fff;
+        }
         .header-wrap {
     display: flex;
     justify-content: flex-end; 
     align-items: center; 
 }
+.copyright {
+    margin-top: 200px; /* Adjust the value as needed */
+}
+.stats-container{
+    margin-bottom: 100px; /* Adjust the value as needed */
 
+}
+.h3bokking{
+    margin-left: 160px;
+}
         .stats-container {
             display: flex;
             flex-wrap: wrap; 
