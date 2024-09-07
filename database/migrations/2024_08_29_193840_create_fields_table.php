@@ -17,7 +17,7 @@ return new class extends Migration
             $table->text('field_description');
             $table->string('field_location');
             $table->boolean('field_avilable');
-            $table->string('opening_time');
+            $table->string('opening_time')->nullable();
             $table->decimal('field_price',10,2);
             $table->foreignId('sport_type_id')->constrained()->onDelete('cascade');
             $table->foreignId('field_type_id')->constrained()->onDelete('cascade');

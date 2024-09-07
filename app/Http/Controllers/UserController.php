@@ -11,7 +11,7 @@ class UserController extends Controller
     {
         $users = User::all();
 
-        return view('users.index', compact('users'));
+        return view('Dashboard.users', compact('users'));
     }
     
     public function create()
@@ -55,7 +55,7 @@ class UserController extends Controller
         $user->role = $request->role;
         $user->save();
 
-        return redirect()->route('dashboard.main')->with('success', 'User role updated successfully.');
+        return  redirect()->back();
     }
 
     public function destroy($id)

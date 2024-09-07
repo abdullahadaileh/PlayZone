@@ -17,7 +17,9 @@ class LoginController extends Controller
     {
         if (Auth::user()->role === 'admin') {
             return redirect('dash');
-        }
+        }elseif (Auth::user()->role === 'superadmin') {
+            return redirect('dash');
+            }  
         return redirect('/');
     }
 
