@@ -86,24 +86,24 @@
                         <table class="table table-borderless table-striped table-earning">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
+                                    <!-- <th>ID</th> -->
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>Role</th>
-                                    <th class="text-right">Created At</th>
-                                    <th class="text-right">Updated At</th>
+                                    <!-- <th class="text-right">Created At</th>
+                                    <th class="text-right">Updated At</th> -->
                                     <th class="text-right">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach($users as $user)
                                     <tr>
-                                        <td>{{ $user->id }}</td>
+                                        <!-- <td>{{ $user->id }}</td> -->
                                         <td>{{ $user->name }}</td>
                                         <td>{{ $user->email }}</td>
                                         <td>{{ $user->role }}</td>
-                                        <td class="text-right">{{ $user->created_at->format('Y-m-d H:i:s') }}</td>
-                                        <td class="text-right">{{ $user->updated_at->format('Y-m-d H:i:s') }}</td>
+                                        <!-- <td class="text-right">{{ $user->created_at->format('Y-m-d H:i:s') }}</td>
+                                        <td class="text-right">{{ $user->updated_at->format('Y-m-d H:i:s') }}</td> -->
                                         <td class="text-right">
                                             
                                             @if(auth()->user()->role === 'superadmin')

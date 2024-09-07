@@ -16,7 +16,7 @@
                     <a href="{{ route('contact') }}" class="nav-item nav-link">Contact Us</a>
                     </div>
                 <!-- Add this part where you want the button to appear -->
-                <li class="nav-item">
+              
                     @auth
                     <!-- If the user is authenticated -->
                     <!-- <a href="{{ url('/') }}" class="btn btn-primary rounded-pill py-2 px-4 my-3 my-lg-0 flex-shrink-0">Home</a> -->
@@ -25,6 +25,6 @@
                     <a href="{{ route('login') }}" class="btn btn-primary rounded-pill py-2 px-4 my-3 my-lg-0 flex-shrink-0">Login</a>
                     <a href="{{ route('register') }}" class="btn btn-primary rounded-pill py-2 px-4 my-3 my-lg-0 flex-shrink-0">Register</a>
                     @endif
-                </li>
+                    
                 </div>
             </nav>
