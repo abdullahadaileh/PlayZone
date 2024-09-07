@@ -143,8 +143,11 @@ Route::patch('/update-user', function() {
     ]);
 
     // Redirect with success message
-    return redirect('profile')->with('success', 'Profile updated successfully.');
+    return redirect('profile')->with('success', 'Profile updated successfully!');
 })->middleware(['auth']);
+
+// remove photo
+Route::post('/profile/remove-photo', [UserController::class, 'remove'])->name('users.remove');
 
 
 Route::get('/edit-password', function () {
@@ -164,7 +167,7 @@ Route::patch('/update-password', function () {
         'password' => bcrypt(request()->new),
     ]);
 
-    return redirect('profile')->with('success', 'password updated successfully.');
+    return redirect('profile')->with('success', 'Password updated successfully!');
 })->middleware(['auth']);
 
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -70,4 +71,17 @@ class UserController extends Controller
 
         return redirect()->route('dashboard.main')->with('success', 'User deleted successfully.');
     }
+    public function remove(Request $request)
+    {
+        // Assuming the user is authenticated
+        $user = Auth::user();
+    
+        // Remove the photo (if necessary, set the user's image to null or a default value)
+        $user->image = null; // or set a default image URL if preferred
+        $user->save();
+    
+        // Redirect back to profile with success message
+        return redirect()->route('profile')->with('success', 'Profile photo removed successfully!');
+    }
+    
 }
