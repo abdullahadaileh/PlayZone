@@ -119,7 +119,7 @@
     <!-- Scripts -->
 
     <!-- Font Awesome Script -->
-    <script src="https://kit.fontawesome.com/41e45c37a6.js" crossorigin="anonymous"></script>
+    <script src={{ asset("https://kit.fontawesome.com/41e45c37a6.js")}} crossorigin="anonymous"></script>
 
     <!-- Jquery JS-->
     <script src="{{ asset('Dashboard/vendor/jquery-3.2.1.min.js') }}"></script>
@@ -127,19 +127,23 @@
     <script src="{{ asset('Dashboard/vendor/bootstrap-4.1/popper.min.js') }}"></script>
     <script src="{{ asset('Dashboard/vendor/bootstrap-4.1/bootstrap.min.js') }}"></script>
     <!-- Vendor JS       -->
-    <script src="{{ asset('Dashboard/vendor/slick/slick.min.js') }}"></script>
-    <script src="{{ asset('Dashboard/vendor/wow/wow.min.js') }}"></script>
-    <script src="{{ asset('Dashboard/vendor/animsition/animsition.min.js') }}"></script>
-    <script src="{{ asset('Dashboard/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js') }}"></script>
-    <script src="{{ asset('Dashboard/vendor/counter-up/jquery.waypoints.min.js') }}"></script>
-    <script src="{{ asset('Dashboard/vendor/counter-up/jquery.counterup.min.js') }}"></script>
-    <script src="{{ asset('Dashboard/vendor/circle-progress/circle-progress.min.js') }}"></script>
-    <script src="{{ asset('Dashboard/vendor/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
-    <script src="{{ asset('Dashboard/vendor/chartjs/Chart.bundle.min.js') }}"></script>
-    <script src="{{ asset('Dashboard/vendor/select2/select2.min.js') }}"></script>
+    <script src="Dashboard/vendor/slick/slick.min.js">
+    </script>
+    <script src={{ asset("Dashboard/vendor/wow/wow.min.js")}}></script>
+    <script src={{ asset("Dashboard/vendor/animsition/animsition.min.js")}}></script>
+    <script src={{ asset("Dashboard/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js")}}>
+    </script>
+    <script src={{ asset("Dashboard/vendor/counter-up/jquery.waypoints.min.js")}}></script>
+    <script src={{ asset("Dashboard/vendor/counter-up/jquery.counterup.min.js")}}>
+    </script>
+    <script src={{ asset("Dashboard/vendor/circle-progress/circle-progress.min.js")}}></script>
+    <script src={{ asset("Dashboard/vendor/perfect-scrollbar/perfect-scrollbar.js")}}></script>
+    <script src={{ asset("Dashboard/vendor/chartjs/Chart.bundle.min.js")}}></script>
+    <script src={{ asset("Dashboard/vendor/select2/select2.min.js")}}>
+    </script>
 
     <!-- Main JS-->
-    <script src="{{ asset('Dashboard/js/main.js') }}"></script>
+    <script src={{ asset("Dashboard/js/main.js")}}></script>
 
 </body>
 
