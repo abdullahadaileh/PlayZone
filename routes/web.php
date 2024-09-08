@@ -148,6 +148,11 @@ Route::patch('/update-user', function() {
 })->middleware(['auth']);
 
 
+// remove photo
+Route::post('/profile/remove-photo', [UserController::class, 'remove'])->name('users.remove');
+
+
+
 Route::get('/edit-password', function () {
     $user = Auth::user();
     return view('landing_page.pages.edit-password', ['user'=> $user]);
