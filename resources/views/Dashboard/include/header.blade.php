@@ -85,7 +85,6 @@
                         <li>
                             <a href="{{url('dash')}}">
                                 <i class="fa-solid fa-users" style="color: #00d084;"></i>Dashboard</a>
->>>>>>> c43abd6c555c1ff77a1eedc45a8ab64d8f26d2f6
                         </li>
                         <li>
                             <a href="{{url('dash/create-user')}}">
@@ -100,11 +99,9 @@
                                     <a href="{{url('dash/create-user')}}"><i class="fa-regular fa-plus" style="color: #00d084;"></i>Add User</a>
                                 </li>
                                 <li>
-<<<<<<< HEAD
                                     <a href="{{url('dash')}}"><i class="fa-solid fa-users" style="color: #00d084;"></i>User Details</a>
-=======
+
                                     <a href="{{url('users')}}"><i class="fa-solid fa-users" style="color: #00d084;"></i>User Details</a>
->>>>>>> c43abd6c555c1ff77a1eedc45a8ab64d8f26d2f6
                                 </li>
                             </ul>
                         </li>    
@@ -163,11 +160,10 @@
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
-<<<<<<< HEAD
+
                                             <img src="{{ asset($admin_profile->image) }}" alt="Admin user Image" class="card-img-top img-thumbnail">
-=======
+
                                             {{-- <img src="{{ $user->image? $user->image : 'https://avatar.iran.liara.run/public/boy?username=Ash' }}" class="rounded mx-auto d-block w-100 h-auto" alt="Profile Picture"> --}}
->>>>>>> c43abd6c555c1ff77a1eedc45a8ab64d8f26d2f6
                                         </div>
                                         <div class="content">
                                             <a role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -178,13 +174,10 @@
                                         <div class="account-dropdown js-dropdown">
                                             <div class="info clearfix">
                                                 <div class="image">
-<<<<<<< HEAD
                                                     <img src="{{ asset($admin_profile->image) }}" alt="Admin user Image" class="card-img-top img-thumbnail">
-=======
                                                     <a href="#">
                                                         {{-- <img src="{{ $user->image? $user->image : 'https://avatar.iran.liara.run/public/boy?username=Ash' }}" class="rounded mx-auto d-block w-100 h-auto" alt="Profile Picture"> --}}
                                                     </a>
->>>>>>> c43abd6c555c1ff77a1eedc45a8ab64d8f26d2f6
                                                 </div>
                                                 <div class="content">
                                                     <h5 class="name">
@@ -202,18 +195,16 @@
                                                     </a>
                                                 </div>
                                                 <div class="account-dropdown__item">
-<<<<<<< HEAD
                                                     <a href={{route('a_profile.index')}}>
                                                         <i class="zmdi zmdi-account"></i>Profile</a>
                                                 </div>
                                                 <div class="account-dropdown__item">
                                                     <a href="#">
                                                         <i class="zmdi zmdi-money-box"></i>Billing</a>
-=======
+
                                                     <a href="#">
                                                         <i class="zmdi zmdi-account"></i>Account
                                                     </a>
->>>>>>> c43abd6c555c1ff77a1eedc45a8ab64d8f26d2f6
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__footer">
