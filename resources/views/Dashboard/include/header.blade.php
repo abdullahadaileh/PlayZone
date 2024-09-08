@@ -143,7 +143,6 @@
                                         <div class="image">
 
 
-                                            <img src="{{ asset($admin_profile->image) }}" alt="Admin user Image" class="card-img-top img-thumbnail">
 
                                         </div>
                                         <div class="content">
@@ -156,7 +155,6 @@
                                             <div class="info clearfix">
                                                 <div class="image">
 
-                                                    <img src="{{ asset($admin_profile->image) }}" alt="Admin user Image" class="card-img-top img-thumbnail">
 
                                                 </div>
                                                 <div class="content">
@@ -174,11 +172,7 @@
                                                         <i class="zmdi zmdi-home"></i>Home
                                                     </a>
                                                 </div>
-                                                <div class="account-dropdown__item">
-
-                                                    <a href={{route('a_profile.index')}}>
-                                                        <i class="zmdi zmdi-account"></i>Profile</a>
-                                                </div>
+                       
                                             
                                             </div>
                                             <div class="account-dropdown__footer">
