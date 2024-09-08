@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminProfileController;
 use App\Http\Controllers\Book_Page;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\ContactUsController;
@@ -191,3 +192,5 @@ Route::put('/users/{id}/update-role', [UserController::class, 'updateRole'])->mi
 Route::get('/dash/contact-us', [ContactUsController::class, 'index'])->name('dashboard.contact_us');
 ////////////change zaina
 Route::put('/bookings/{id}/updateStatus', [BookingController::class, 'updateStatus'])->name('bookings.updateStatus');
+
+Route::resource('a_profile', AdminProfileController::class)->middleware(['auth','admin']);

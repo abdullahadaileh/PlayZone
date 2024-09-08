@@ -141,9 +141,7 @@
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
-
-
-
+                                            <img src="{{ asset($admin_profile->image) }}" alt="Admin user Image" class="card-img-top img-thumbnail">
                                         </div>
                                         <div class="content">
                                             <a role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -154,8 +152,7 @@
                                         <div class="account-dropdown js-dropdown">
                                             <div class="info clearfix">
                                                 <div class="image">
-
-
+                                                    <img src="{{ asset($admin_profile->image) }}" alt="Admin user Image" class="card-img-top img-thumbnail">
                                                 </div>
                                                 <div class="content">
                                                     <h5 class="name">
@@ -172,7 +169,10 @@
                                                         <i class="zmdi zmdi-home"></i>Home
                                                     </a>
                                                 </div>
-                       
+                                                <div class="account-dropdown__item">
+                                                    <a href={{route('a_profile.index')}}>
+                                                        <i class="zmdi zmdi-account"></i>Profile</a>
+                                                </div>
                                             
                                             </div>
                                             <div class="account-dropdown__footer">
