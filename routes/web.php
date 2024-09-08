@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\Book_Page;
-use App\Http\Controllers\AdminProfileController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\FieldController;
@@ -144,11 +143,8 @@ Route::patch('/update-user', function() {
     ]);
 
     // Redirect with success message
-    return redirect('profile')->with('success', 'Profile updated successfully!');
+    return redirect('profile')->with('success', 'Profile updated successfully.');
 })->middleware(['auth']);
-
-// remove photo
-Route::post('/profile/remove-photo', [UserController::class, 'remove'])->name('users.remove');
 
 
 Route::get('/edit-password', function () {
@@ -168,7 +164,7 @@ Route::patch('/update-password', function () {
         'password' => bcrypt(request()->new),
     ]);
 
-    return redirect('profile')->with('success', 'Password updated successfully!');
+    return redirect('profile')->with('success', 'password updated successfully.');
 })->middleware(['auth']);
 
 
@@ -195,18 +191,3 @@ Route::put('/users/{id}/update-role', [UserController::class, 'updateRole'])->mi
 Route::get('/dash/contact-us', [ContactUsController::class, 'index'])->name('dashboard.contact_us');
 ////////////change zaina
 Route::put('/bookings/{id}/updateStatus', [BookingController::class, 'updateStatus'])->name('bookings.updateStatus');
-
-// Edit user
-
-Route::get('/users/{id}/edit-role', [UserController::class, 'editRole'])->middleware(['auth'])->name('users.editRole');
-Route::put('/users/{id}/update-role', [UserController::class, 'updateRole'])->middleware(['auth'])->name('users.updateRole');
-
-
-// contact us
-Route::get('/dash/contact-us', [ContactUsController::class, 'index'])->name('dashboard.contact_us');
-////////////change zaina
-Route::put('/bookings/{id}/updateStatus', [BookingController::class, 'updateStatus'])->name('bookings.updateStatus');
-
-//Admin Profile
-Route::resource('a_profile', AdminProfileController::class)->middleware(['auth','admin']);
-// Route::rec('/a_profile', [AdminProfileController::class, 'edit'])->middleware(['auth','admin'])->name('profile');
