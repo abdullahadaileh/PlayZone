@@ -122,7 +122,7 @@
         var userChart = new Chart(ctx2, {
             type: 'pie',
             data: {
-                labels: ['Users', 'Admins','superadminsCount'],
+                labels: ['superadminsCount', 'Admins','Users'],
                 datasets: [{
                     label: 'Users vs Admins',
                     data: [{{ $superadminsCount }}, {{ $adminsCount }},{{ $usersCount }}],
