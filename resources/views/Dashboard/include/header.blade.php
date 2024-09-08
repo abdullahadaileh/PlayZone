@@ -163,11 +163,7 @@
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
-<<<<<<< HEAD
-                                            <img src="{{ asset($admin_profile->image) }}" alt="Admin user Image" class="card-img-top img-thumbnail">
-=======
                                             {{-- <img src="{{ $user->image? $user->image : 'https://avatar.iran.liara.run/public/boy?username=Ash' }}" class="rounded mx-auto d-block w-100 h-auto" alt="Profile Picture"> --}}
->>>>>>> c43abd6c555c1ff77a1eedc45a8ab64d8f26d2f6
                                         </div>
                                         <div class="content">
                                             <a role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
