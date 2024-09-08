@@ -68,7 +68,7 @@
                     <img src="{{ asset('landing/img/testimonial-3.jpg') }}" class="img-fluid" alt="Alex Johnson">
                 </div>
                 <div class="testimonial-text">
-                    <p class="mb-0">"PlayZone provides a top-notch experience for anyone who loves gaming and recreation. The facilities are well-maintained, and the staff is friendly and professional."</p>
+                    <p class="mb-0">"PlayZone provides a top-notch experience for anyone who loves gaming and recreation. The facilities are well-maintained, and the staff is friendly and professional. Highly recommended!"</p>
                 </div>
                 <div class="testimonial-title">
                     <div>

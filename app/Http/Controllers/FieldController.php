@@ -34,51 +34,47 @@ class FieldController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-        $validatedData = $request->validate([
-            'field_name' => 'required|string|max:255',
-            'field_description' => 'required|string',
-            'field_location' => 'required|string|max:255',
-            'field_price' => 'required|numeric',
-            'sport_type_id' => 'required|exists:sport_types,id',  
-        'field_type_id' => 'required|exists:field_types,id',
-            'opens_at' => 'nullable|date_format:H:i',  
-        'closes_at' => 'nullable|date_format:H:i',  
-        'is_24_hours' => 'nullable|boolean',  
-        ]);
-    
+public function store(Request $request)
+{
+    // Validate the main fields excluding images
+    $validatedData = $request->validate([
+        'field_name' => 'required|string|max:255',
+        'field_description' => 'required|string',
+        'field_location' => 'required|string|max:255',
+        'field_price' => 'required|numeric',
+        'sport_type_id' => 'required|exists:sport_types,id',  // Validate sport_id against sport_types table
+    'field_type_id' => 'required|exists:field_types,id',
+    ]);
+ 
 
-        $validatedData['field_avilable'] = 0;
+    // Default field_available to 0
+    $validatedData['field_avilable'] = 0;
 
+    // Create the field
+    $field = Field::create($validatedData);
 
-    if ($request->has('is_24_hours') && $request->is_24_hours == 1) {
-        $validatedData['opens_at'] = null;
-        $validatedData['closes_at'] = null;
-    } else {
-        $validatedData['is_24_hours'] = 0;
-    }
+  if ($request->hasFile('field_images')) {
+        foreach ($request->file('field_images') as $file) {
+            // Validate each file
+            $request->validate([
+                'field_images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            ]);
 
-        $field = Field::create($validatedData);
+            // Generate a unique filename
+            $filename = time() . '-' . uniqid() . '.' . $file->getClientOriginalExtension();
 
-    if ($request->hasFile('field_images')) {
-            foreach ($request->file('field_images') as $file) {
-                $request->validate([
-                    'field_images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-                ]);
+            // Store the file in public/landing/img directory
+            $path = $file->move(public_path('landing/img'), $filename);
 
-                $filename = time() . '-' . uniqid() . '.' . $file->getClientOriginalExtension();
-
-                $path = $file->move(public_path('landing/img'), $filename);
-
-                Field_images::create([
-                    'field_images' => 'landing/img/' . $filename,
-                    'field_id' => $field->id,
-                ]);
-            }
+            // Create a record in the field_images table
+            Field_images::create([
+                'field_images' => 'landing/img/' . $filename, // Store the relative path
+                'field_id' => $field->id,
+            ]);
         }
-        return redirect()->route('fields.index')->with('success', 'Field created successfully');
     }
+    return redirect()->route('fields.index')->with('success', 'Field created successfully');
+}
 
 
 
@@ -108,20 +104,17 @@ class FieldController extends Controller
     public function update(Request $request,$id)
     {
           $field = Field::findOrFail($id);
-$validatedData = $request->validate([
-    'field_name' => 'required|string|max:255',
-    'field_description' => 'required|string',
-    'field_location' => 'required|string|max:255',
-    'field_price' => 'required|numeric',
-    'sport_type_id' => 'required|exists:sport_types,id',
-    'field_type_id' => 'required|exists:field_types,id',
-    'field_avilable' => 'required|boolean',
-    'opens_at' => 'required|date_format:H:i',
-    'closes_at' => 'required|date_format:H:i',
-    'new_field_images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-]);
 
-
+    $validatedData = $request->validate([
+        'field_name' => 'required|string|max:255',
+        'field_description' => 'required|string',
+        'field_location' => 'required|string|max:255',
+        'field_price' => 'required|numeric',
+        'sport_type_id' => 'required|exists:sport_types,id',
+        'field_type_id' => 'required|exists:field_types,id',
+        'field_avilable' => 'required|boolean',
+        'new_field_images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+    ]);
 
     $field->update($validatedData);
 
