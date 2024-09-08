@@ -9,10 +9,9 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0">
                         <a href="{{ route('Home') }}" class="nav-item nav-link active">Home</a>
-                        <a href="{{ route('about') }}" class="nav-item nav-link">About</a>
+                        <a href="{{ route('about') }}" class="nav-item nav-link">About Us</a>
                         <!-- change zaina -->
-                        <a href="{{ route('services.index') }}" class="nav-item nav-link">Services</a> 
-                        <a href="{{ route('blogs') }}" class="nav-item nav-link">Blogs</a>
+                        <a href="{{ route('services.index') }}" class="nav-item nav-link">Courts</a> 
                         </div>
                     <a href="{{ route('contact') }}" class="nav-item nav-link">Contact Us</a>
                     </div>
@@ -20,7 +19,7 @@
                 <li class="nav-item">
                     @auth
                     <!-- If the user is authenticated -->
-                    <a href="{{ url('/') }}" class="btn btn-primary rounded-pill py-2 px-4 my-3 my-lg-0 flex-shrink-0">Home</a>
+                    <!-- <a href="{{ url('/') }}" class="btn btn-primary rounded-pill py-2 px-4 my-3 my-lg-0 flex-shrink-0">Home</a> -->
                     @else
                     <!-- If the user is not authenticated -->
                     <a href="{{ route('login') }}" class="btn btn-primary rounded-pill py-2 px-4 my-3 my-lg-0 flex-shrink-0">Login</a>

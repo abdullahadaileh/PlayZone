@@ -33,29 +33,28 @@ class SportTypeController extends Controller
      */
     public function store(Request $request)
     {
-        // Create the initial sport_type entry without the image
-        $sportType = sport_type::create([
-            'sport_type' => $request->input('sport_type'),
+        $request->validate([
+            'sport_type' => 'required|string|max:255',
+            'sport_image' => 'nullable|image',
+            'sport_desc' => 'required|string|max:255',
         ]);
-        
-        $filename = NULL;
-        $path = NULL;
 
-        // Sport Type Image
         if ($request->hasFile('sport_image')) {
-            $file = $request->file('sport_image');
-            $extension = $file->getClientOriginalExtension();
-            $filename = time() . '.' . $extension;
-            $path = 'landing/img/';
-            $file->move($path, $filename);
-            
-            sport_type::create([
-                'sport_type' => $request->sport_type,
-                'sport_image' => $path.$filename,
-            ]);
+            $sport_image = $request->file('sport_image');
+            $filename = time() . '.' . $sport_image->getClientOriginalExtension();
+            $path = 'landing/img/'; // Directory where you want to store the image
+            $sport_image->move($path, $filename);
+
+        // $path = $request->file('sport_image')->store('landing/img');
         }
-        return redirect()->route('sport-types.index')->with('success', 'Sport Type created successfully.');
-        // return redirect()->route('sport-types.index')->with('success', 'Sport Type created successfully.');
+        sport_type::create([
+            'sport_type' => $request->sport_type,
+            'sport_image' => $path . $filename,
+            'sport_desc' => $request->sport_desc,
+        ]);
+
+        return redirect()->route('sport-types.index')->with('success', 'Sport type added successfully.');
+
     }
 
     /**
@@ -78,43 +77,31 @@ class SportTypeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $sport_type)
 {
-    // Find the existing sport_type record
-    $sportType = sport_type::findOrFail($id);
+    // Find the actual SportType model instance using the ID
+    $sport_type = sport_type::findOrFail($sport_type);
 
-    // Update sport_type without image
-    $sportType->update([
-        'sport_type' => $request->input('sport_type'),
+    $request->validate([
+        'sport_type' => 'required|string|max:255',
+        'sport_image' => 'nullable|image',
+        'sport_desc' => 'required|string|max:255',
     ]);
 
-    // Initialize filename and path
-    $filename = NULL;
-    $path = NULL;
-
-    // Check if a new image file is uploaded
+    // Handle image upload if present
     if ($request->hasFile('sport_image')) {
-        // Remove the old image if it exists
-        if ($sportType->sport_image && file_exists(public_path($sportType->sport_image))) {
-            unlink(public_path($sportType->sport_image));
-        }
-
-        // Upload the new image
-        $file = $request->file('sport_image');
-        $extension = $file->getClientOriginalExtension();
-        $filename = time() . '.' . $extension;
-        $path = 'landing/img/';
-        $file->move(public_path($path), $filename);
-
-        // Update the record with the new image path
-        $sportType->sport_image = $path . $filename;
+        $path = public_path('landing/img/'); // Directory where you want to store the image
+        // $path = $request->file('sport_image')->store('landing/img');
+        $sport_type->sport_image = $path;
     }
 
-    // Save the updated record
-    $sportType->save();
+    // Update the sport type and description
+    $sport_type->sport_type = $request->sport_type;
+    $sport_type->sport_desc = $request->sport_desc;
+    $sport_type->save();
 
-    // Redirect with success message
-    return redirect()->route('sport-types.index')->with('success', 'Sport Type updated successfully.');
+    return redirect()->route('sport-types.index')->with('success', 'Sport type updated successfully.');
+    
 }
 
     /**

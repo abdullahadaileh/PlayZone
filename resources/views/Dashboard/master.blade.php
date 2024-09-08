@@ -8,6 +8,7 @@
     <meta name="description" content="au theme template">
     <meta name="author" content="Hau Nguyen">
     <meta name="keywords" content="au theme template">
+    <link rel="icon" href="{{ asset('landing/img/playzone-favicon-color.png') }}" type="image/png">
 
     <!-- Title Page-->
     <title>PlayZone-Dashboard</title>
@@ -35,7 +36,64 @@
 
     <!-- FontAwesome CDN-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .header-wrap {
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center; 
+}
 
+        .stats-container {
+            display: flex;
+            flex-wrap: wrap; 
+            width: 100%;
+            gap: 20px; 
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .stat-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            flex: 1 1 calc(25% - 20px); 
+            max-width: calc(25% - 20px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.3s ease; 
+            box-sizing: border-box;
+        }
+        .stat-card:hover {
+            transform: translateY(-10px); 
+        }
+        .stat-card .icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+        .stat-card .text {
+            font-size: 18px;
+            color: #888;
+            margin-bottom: 10px;
+        }
+        .stat-card .number {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .stat-card.blue .icon {
+            color: #007bff;
+        }
+        .stat-card.green .icon {
+            color: #28a745;
+        }
+        .stat-card.purple .icon {
+            color: #6f42c1;
+        }
+        .stat-card.red .icon {
+            color: #dc3545;
+        }    
+        </style>
 </head>
 
 <body class="animsition">

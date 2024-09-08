@@ -3,7 +3,6 @@
 @section('content')
 
 @include('landing_page.sections.hero')
-@include('landing_page.sections.about')
 
 
 @include('landing_page.sections.services')
@@ -16,7 +15,6 @@
 
 
 <!-- Offer Start -->
-@include('landing_page.sections.offer')
 
 <!-- Offer End -->
 
@@ -33,7 +31,6 @@
 
 
 <!-- Team Start -->
-@include('landing_page.sections.team')
 
 <!-- Team End -->
 

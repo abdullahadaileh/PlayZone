@@ -1,66 +1,72 @@
-@extends('layouts.app')
-
+@extends('landing_page.layouts.master')
 @section('content')
 <style>
+    .logpage{
+        background-image: url({{ asset('landing/img/cat_football.jpg') }});
+    }
     .card {
         border-radius: 10px;
         overflow: hidden;
         box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        margin-top: 150px;
+        margin-bottom: 120px;
     }
-
+    
     .card-header {
         background-color: #f8f9fa;
         font-size: 1.25rem;
         font-weight: bold;
         text-align: center;
     }
-
+    
     .card-body {
         display: flex;
         padding: 2rem;
     }
-
+    
     .form-container, .image-container {
-        flex: 1;
-        margin: 1rem;
+        flex: 1; 
+        margin: 1rem; 
     }
-
+    
     .form-control {
         border-radius: 5px;
         border: 1px solid #ced4da;
     }
-
+    
     .image-container {
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100%;
-        padding: 0;
-        margin: -32px;
+        padding: 0; 
+        margin: -32px;  
     }
-
+    
     .image-container img {
         max-width: 100%;
-        height: auto;
+        height: auto; 
         border-radius: 10px 0 10px 10px;
-        display: block;
+        display: block; 
     }
-
+    
+    
     .btn-primary {
         background-color: #00d084;
         border-color: #00d084;
     }
-
+    
     .btn-primary:hover {
         background-color: #00d084;
         border-color: #00d084;
     }
-
+    
     .invalid-feedback {
         color: #dc3545;
     }
-</style>
+    </style>
 
+<div class="logpage">
 <div class="container">
     <div class="row justify-content-center align-items-center">
         <div class="col-md-12">
@@ -139,5 +145,6 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 @endsection
