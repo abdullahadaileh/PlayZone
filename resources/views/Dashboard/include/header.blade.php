@@ -81,6 +81,11 @@
                                     <a href="{{url('dash/create-user')}}"><i class="fa-regular fa-plus" style="color: #00d084;"></i>Add User</a>
                                 </li>
                                 <li>
+<<<<<<< HEAD
+=======
+                                    <a href="{{url('dash')}}"><i class="fa-solid fa-users" style="color: #00d084;"></i>User Details</a>
+
+>>>>>>> fc8e45ae77d483de0b5bca94a0d97cc17c172129
                                     <a href="{{url('users')}}"><i class="fa-solid fa-users" style="color: #00d084;"></i>User Details</a>
                                 </li>
                             </ul>
@@ -140,6 +145,12 @@
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
+<<<<<<< HEAD
+=======
+
+                                            <img src="{{ asset($admin_profile->image) }}" alt="Admin user Image" class="card-img-top img-thumbnail">
+
+>>>>>>> fc8e45ae77d483de0b5bca94a0d97cc17c172129
                                             {{-- <img src="{{ $user->image? $user->image : 'https://avatar.iran.liara.run/public/boy?username=Ash' }}" class="rounded mx-auto d-block w-100 h-auto" alt="Profile Picture"> --}}
                                         </div>
                                         <div class="content">
@@ -151,6 +162,10 @@
                                         <div class="account-dropdown js-dropdown">
                                             <div class="info clearfix">
                                                 <div class="image">
+<<<<<<< HEAD
+=======
+                                                    <img src="{{ asset($admin_profile->image) }}" alt="Admin user Image" class="card-img-top img-thumbnail">
+>>>>>>> fc8e45ae77d483de0b5bca94a0d97cc17c172129
                                                     <a href="#">
                                                         {{-- <img src="{{ $user->image? $user->image : 'https://avatar.iran.liara.run/public/boy?username=Ash' }}" class="rounded mx-auto d-block w-100 h-auto" alt="Profile Picture"> --}}
                                                     </a>
@@ -171,6 +186,16 @@
                                                     </a>
                                                 </div>
                                                 <div class="account-dropdown__item">
+<<<<<<< HEAD
+=======
+                                                    <a href={{route('a_profile.index')}}>
+                                                        <i class="zmdi zmdi-account"></i>Profile</a>
+                                                </div>
+                                                <div class="account-dropdown__item">
+                                                    <a href="#">
+                                                        <i class="zmdi zmdi-money-box"></i>Billing</a>
+
+>>>>>>> fc8e45ae77d483de0b5bca94a0d97cc17c172129
                                                     <a href="#">
                                                         <i class="zmdi zmdi-account"></i>Account
                                                     </a>
