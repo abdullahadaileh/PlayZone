@@ -49,7 +49,7 @@
                             <div class="accordion-body">Field availability is shown in real-time on our booking page. Simply select your desired time slot to see open fields.</div>
                         </div>
                     </div>
-                    <div class="accordion-item">
+                    <!-- <div class="accordion-item">
                         <h2 class="accordion-header" id="flush-headingFive">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
                                 What Payment Methods Does PlayZone Accept?
@@ -58,7 +58,7 @@
                         <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushSection">
                             <div class="accordion-body">We accept various payment methods, including credit/debit cards and online payment platforms for your convenience.</div>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="accordion-item rounded-bottom">
                         <h2 class="accordion-header" id="flush-headingSix">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
@@ -66,7 +66,7 @@
                             </button>
                         </h2>
                         <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushSection">
-                            <div class="accordion-body">You can reach our support team via email or chat support on our website for any assistance you need.</div>
+                            <div class="accordion-body">You can reach our support team via our mobile number or chat support on our website for any assistance you need.</div>
                         </div>
                     </div>
                 </div>

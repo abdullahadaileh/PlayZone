@@ -14,6 +14,7 @@ class DashboardController extends Controller
     {
         $usersCount = User::count();
         $adminsCount = User::where('role', 'admin')->count();
+        $superadminsCount = User::where('role', 'superadmin')->count();
         $fieldsCount = Field::count();
         $bookingsCount = Booking::count();
 
@@ -26,6 +27,6 @@ class DashboardController extends Controller
 
         $users = User::all();
 
-        return view('dashboard.main', compact('users', 'usersCount', 'adminsCount', 'fieldsCount', 'bookingsCount', 'todayReservations', 'monthReservations', 'yearReservations'));
+        return view('dashboard.main', compact('users', 'usersCount', 'adminsCount','superadminsCount', 'fieldsCount', 'bookingsCount', 'todayReservations', 'monthReservations', 'yearReservations'));
     }
 }

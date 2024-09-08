@@ -12,7 +12,7 @@
                         <i class="fas fa-basketball-ball fa-4x text-primary"></i>
                     </div>
                     <h4 class="text-center mb-3">Sports Facilities</h4>
-                    <p class="text-center mb-4">Book various sports facilities including basketball courts, tennis courts, and more, all in one place.</p>
+                    <p class="text-center mb-4">Book various sports facilities including basketball courts, tennis courts, and more, all in one place .</p>
                     </div>
             </div>
             <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.4s">
@@ -21,7 +21,7 @@
                         <i class="fas fa-calendar-alt fa-4x text-primary"></i>
                     </div>
                     <h4 class="text-center mb-3">Flexible Booking</h4>
-                    <p class="text-center mb-4">Easily schedule your sports activities with our user-friendly booking system designed for your convenience.</p>
+                    <p class="text-center mb-4">Easily schedule your sports activities with our user-friendly booking system designed for your convenience .</p>
                 </div>
             </div>
             <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.6s">
@@ -39,7 +39,7 @@
                         <i class="fas fa-star fa-4x text-primary"></i>
                     </div>
                     <h4 class="text-center mb-3">Quality Assurance</h4>
-                    <p class="text-center mb-4">Enjoy top-quality facilities and services with our strict quality assurance measures in place.</p>
+                    <p class="text-center mb-4">Enjoy top-quality facilities and services with our strict quality assurance measures in place a great time.</p>
                 </div>
             </div>
         </div>

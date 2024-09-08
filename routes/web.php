@@ -193,6 +193,17 @@ Route::get('/dash/contact-us', [ContactUsController::class, 'index'])->name('das
 ////////////change zaina
 Route::put('/bookings/{id}/updateStatus', [BookingController::class, 'updateStatus'])->name('bookings.updateStatus');
 
+// Edit user
+
+Route::get('/users/{id}/edit-role', [UserController::class, 'editRole'])->middleware(['auth'])->name('users.editRole');
+Route::put('/users/{id}/update-role', [UserController::class, 'updateRole'])->middleware(['auth'])->name('users.updateRole');
+
+
+// contact us
+Route::get('/dash/contact-us', [ContactUsController::class, 'index'])->name('dashboard.contact_us');
+////////////change zaina
+Route::put('/bookings/{id}/updateStatus', [BookingController::class, 'updateStatus'])->name('bookings.updateStatus');
+
 //Admin Profile
 Route::resource('a_profile', AdminProfileController::class)->middleware(['auth','admin']);
 // Route::rec('/a_profile', [AdminProfileController::class, 'edit'])->middleware(['auth','admin'])->name('profile');
