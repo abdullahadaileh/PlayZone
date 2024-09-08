@@ -80,6 +80,12 @@
                         {{-- <li>
                             <a href="{{url('dash')}}">
                                 <i class="fa-solid fa-users" style="color: #00d084;"></i>Subscribers/Users</a>
+=======
+                        {{-- /RGD --}}
+                        <li>
+                            <a href="{{url('dash')}}">
+                                <i class="fa-solid fa-users" style="color: #00d084;"></i>Dashboard</a>
+>>>>>>> c43abd6c555c1ff77a1eedc45a8ab64d8f26d2f6
                         </li>
                         <li>
                             <a href="{{url('dash/create-user')}}">
@@ -94,7 +100,11 @@
                                     <a href="{{url('dash/create-user')}}"><i class="fa-regular fa-plus" style="color: #00d084;"></i>Add User</a>
                                 </li>
                                 <li>
+<<<<<<< HEAD
                                     <a href="{{url('dash')}}"><i class="fa-solid fa-users" style="color: #00d084;"></i>User Details</a>
+=======
+                                    <a href="{{url('users')}}"><i class="fa-solid fa-users" style="color: #00d084;"></i>User Details</a>
+>>>>>>> c43abd6c555c1ff77a1eedc45a8ab64d8f26d2f6
                                 </li>
                             </ul>
                         </li>    
@@ -113,15 +123,15 @@
                      <!-- zaina change -->
                       <li class="has-sub">
                             <a class="js-arrow" href="#">
-                                <i class="fa-regular fa-paste" style="color: #00d084;"></i>Zones</a>
+                                <i class="fa-regular fa-paste" style="color: #00d084;"></i>Fields</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                <li>
+                                     <a href="{{route('fields.create')}}"><i class="fa-solid fa-plus"></i>New Field</a>
+                                </li>
                                <li>
                         <a href="{{route('fields.index')}}">
-                           <i class="fa-regular fa-futbol" style="color: #00d084;"></i> All Zones</a>
+                           <i class="fa-regular fa-futbol" style="color: #00d084;"></i> All Field</a>
                         </li>
-                                <li>
-                                     <a href="{{route('fields.create')}}"><i class="fa-solid fa-plus"></i>New Zone</a>
-                                </li>
                                
                             </ul>
                         </li>
