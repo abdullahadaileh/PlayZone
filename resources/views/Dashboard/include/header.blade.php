@@ -202,12 +202,18 @@
                                                     </a>
                                                 </div>
                                                 <div class="account-dropdown__item">
+<<<<<<< HEAD
                                                     <a href={{route('a_profile.index')}}>
                                                         <i class="zmdi zmdi-account"></i>Profile</a>
                                                 </div>
                                                 <div class="account-dropdown__item">
                                                     <a href="#">
                                                         <i class="zmdi zmdi-money-box"></i>Billing</a>
+=======
+                                                    <a href="#">
+                                                        <i class="zmdi zmdi-account"></i>Account
+                                                    </a>
+>>>>>>> c43abd6c555c1ff77a1eedc45a8ab64d8f26d2f6
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__footer">
