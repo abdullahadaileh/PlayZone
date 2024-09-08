@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('sport_type');
             $table->string('sport_image')->nullable();
-            $table->string('sport_desc')->default('No description available');
             $table->timestamps();
             $table->softDeletes(); // soft Delete
         });
