@@ -1,11 +1,10 @@
 <div class="container-fluid blog pb-5">
     <div class="container pb-5">
         <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-            <h4 class="text-primary">Our Blog & News</h4>
-            <h1 class="display-5 mb-4">Articles For Pro Traders</h1>
-            <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint dolorem autem obcaecati, ipsam mollitia hic.</p>
+            <h4 class="text-primary">OurCourts</h4>
+            <h1 class="display-5 mb-4">Explore Now The Various Courts The Best Courts In Jordan  </h1>
         </div>
-        <div class="owl-carousel blog-carousel wow fadeInUp" data-wow-delay="0.2s">
+        <div class="owl-carousel blog-carousel wow fadeInUp">
             @foreach($fields as $field)
                 <div class="blog-item p-4">
                     <div class="blog-img mb-4">
@@ -15,7 +14,7 @@
                             <img src="{{ asset('landing/img/placeholder.jpg') }}" class="img-fluid w-100 rounded" style="height: 200px; object-fit: cover;" alt="Placeholder">
                         @endif
                         <div class="blog-title">
-                            <a href="#" class="btn">{{ $field->field_category }}</a>
+                            <a href="{{ route('services.show', $field->id) }}" class="btn">{{ $field->field_name }}</a>
                         </div>
                     </div>
                     <a href="{{ route('fields.show', $field->id) }}" class="h4 d-inline-block mb-3">{{ $field->field_title }}</a>
